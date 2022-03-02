@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time</title>
+</head>
+<body>
+    <h1><span th:text="${currTime}"></span></h1>
+    <br>
+    <tbody>
+        <tr th:each="person:${allPersons}">
+            <td th:text="${person.id}"></td>
+            <td th:text="${person.firstName}"></td>
+            <td th:text="${person.lastName}"></td>
+            <td th:text="${person.gender}"></td>
+            <td>
+                <span th:if="${person.gender}=='M'" th:text="Male"></span>
+                <span th:unless="${person.gender}=='M'" th:text="Female"></span> <!--th:unless is opposite condition-->
+            </td>
+        </tr>
+    </tbody>
+    <br>
+    <h2>Query String</h2>
+    <tbody>
+        <tr>
+            <td th:text="${resultPerson.id}"></td>
+            <td th:text="${resultPerson.firstName}"></td>
+            <td th:text="${resultPerson.lastName}"></td>
+            <td th:text="${resultPerson.gender}"></td>
+            <td>
+                <span th:if="${resultPerson.gender}=='M'" th:text="Male"></span>
+                <span th:unless="${resultPerson.gender}=='M'" th:text="Female"></span> <!--th:unless is opposite condition-->
+            </td>
+        </tr>
+    </tbody>
+</body>
+</html>
