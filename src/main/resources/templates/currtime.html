@@ -7,10 +7,12 @@
     <title>Date and Time</title>
 </head>
 <body>
-    <h1><span th:text="${currTime}"></span></h1>
+    <h1><span th:text="${currTime}"></span></h1> <!--Page will still load even without currTime added to model, because it is not being 
+    manipulated. It will just not be rendered on page.-->
     <br>
     <tbody>
-        <tr th:each="person:${allPersons}">
+        <tr th:each="person:${allPersons}"> <!--This will throw 500 error if not added to model, because allPersons is 
+            being manipulated-->
             <td th:text="${person.id}"></td>
             <td th:text="${person.firstName}"></td>
             <td th:text="${person.lastName}"></td>
